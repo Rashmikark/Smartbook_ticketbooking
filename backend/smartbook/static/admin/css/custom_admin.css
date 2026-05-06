@@ -1,0 +1,37 @@
+/* ── Dropdown select options ── */
+select option {
+    background-color: #1a1a2e !important;
+    color: #ffffff !important;
+}
+
+/* ── Select2 dropdown (Jazzmin uses Select2) ── */
+.select2-results__option {
+    background-color: #1a1a2e !important;
+    color: #ffffff !important;
+}
+
+.select2-results__option--highlighted {
+    background-color: #6c3bff !important;
+    color: #ffffff !important;
+}
+
+.select2-dropdown {
+    background-color: #1a1a2e !important;
+    border: 1px solid #6c3bff !important;
+}
+
+.select2-search__field {
+    background-color: #2a2a3e !important;
+    color: #ffffff !important;
+    border: 1px solid #6c3bff !important;
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: #2a2a3e !important;
+    border: 1px solid #6c3bff !important;
+    color: #ffffff !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #ffffff !important;
+}
