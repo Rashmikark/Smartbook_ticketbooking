@@ -119,7 +119,7 @@ const booked = JSON.parse(localStorage.getItem(showKey) || '[]');
 
   const fetchShows = async () => {
     try {
-      const res = await axios.get('http://127.0.0.1:8000/api/shows/');
+      const res = await axios.get('https://smartbookapp.duckdns.org/api/shows/');
       setShows(res.data.results?.length > 0 ? res.data.results : DUMMY_SHOWS);
     } catch { setShows(DUMMY_SHOWS); }
   };

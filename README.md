@@ -134,7 +134,7 @@ python manage.py seed_events
 # Start backend server
 python manage.py runserver
 ```
-Backend runs at → `http://127.0.0.1:8000/`
+Backend runs at → `https://smartbookapp.duckdns.org/`
 
 ### 3. Terminal 2 — Frontend
 ```bash
@@ -168,7 +168,7 @@ This creates:
 
 Access the admin panel at:
 ```
-http://127.0.0.1:8000/admin/
+https://smartbookapp.duckdns.org/admin/
 ```
 From the admin panel you can:
 - ➕ Add / ✏️ Edit / ❌ Remove events, venues, shows
@@ -180,7 +180,7 @@ From the admin panel you can:
 
 ## 🌐 API Endpoints
 
-Base URL: `http://127.0.0.1:8000/api/`
+Base URL: `https://smartbookapp.duckdns.org/api/`
 
 ### 🔐 Authentication
 | Method | Endpoint | Description |

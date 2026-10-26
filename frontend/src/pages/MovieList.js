@@ -23,14 +23,14 @@ export default function MovieList() {
     const city = localStorage.getItem('selectedCity') || 'Chennai';
     try {
       // Get shows for selected city
-      const showsRes = await axios.get(`http://127.0.0.1:8000/api/shows/city/${city}/`);
+      const showsRes = await axios.get(`https://smartbookapp.duckdns.org/api/shows/city/${city}/`);
       const shows = Array.isArray(showsRes.data) ? showsRes.data : showsRes.data.results || [];
 
       // Get unique event IDs from those shows
       const eventIds = [...new Set(shows.map(s => s.event))];
 
       // Get all events
-      const res = await axios.get('http://127.0.0.1:8000/api/events/');
+      const res = await axios.get('https://smartbookapp.duckdns.org/api/events/');
       const rawData = Array.isArray(res.data) ? res.data : res.data.results || [];
 
       // Filter only events that have shows in this city

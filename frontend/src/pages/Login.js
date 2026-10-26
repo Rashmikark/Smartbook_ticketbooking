@@ -17,13 +17,13 @@ export default function Login() {
     setError(''); setSuccess(''); setLoading(true);
     try {
       if (mode === 'login') {
-        const res = await axios.post('http://127.0.0.1:8000/api/auth/send-otp/', { mobile: form.mobile });
+        const res = await axios.post('https://smartbookapp.duckdns.org/api/auth/send-otp/', { mobile: form.mobile });
         setSuccess(`OTP sent! For testing use: ${res.data.otp}`);
         setStep('otp');
       } else {
         if (!form.email) { setError('Email is required'); setLoading(false); return; }
         if (!form.mobile || form.mobile.length !== 10) { setError('Enter valid 10 digit mobile number'); setLoading(false); return; }
-        const res = await axios.post('http://127.0.0.1:8000/api/auth/register/', {
+        const res = await axios.post('https://smartbookapp.duckdns.org/api/auth/register/', {
           username: form.username, password: form.password,
           email: form.email, mobile: form.mobile,
         });
@@ -40,9 +40,9 @@ export default function Login() {
   const handleVerifyOTP = async () => {
     setError(''); setLoading(true);
     try {
-      await axios.post('http://127.0.0.1:8000/api/auth/verify-otp/', { mobile: form.mobile, otp });
+      await axios.post('https://smartbookapp.duckdns.org/api/auth/verify-otp/', { mobile: form.mobile, otp });
       if (mode === 'login') {
-        const loginRes = await axios.post('http://127.0.0.1:8000/api/auth/login/', { username: form.username, password: form.password });
+        const loginRes = await axios.post('https://smartbookapp.duckdns.org/api/auth/login/', { username: form.username, password: form.password });
         localStorage.setItem('token', loginRes.data.token);
 localStorage.setItem('token', loginRes.data.token);
 localStorage.setItem('username', loginRes.data.username);
@@ -63,7 +63,7 @@ setTimeout(() => window.dispatchEvent(new Event("authChange")), 200);// ← goes
   const handleResendOTP = async () => {
     setError(''); setLoading(true);
     try {
-      const res = await axios.post('http://127.0.0.1:8000/api/auth/send-otp/', { mobile: form.mobile });
+      const res = await axios.post('https://smartbookapp.duckdns.org/api/auth/send-otp/', { mobile: form.mobile });
       setSuccess(`New OTP sent! Use: ${res.data.otp}`);
     } catch { setError('Failed to resend OTP'); }
     finally { setLoading(false); }

@@ -52,7 +52,7 @@ export default function AdminPanel() {
   const [showAddEvent, setShowAddEvent] = useState(false);
   
   React.useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/events/')
+    fetch('https://smartbookapp.duckdns.org/api/events/')
       .then(r => r.json())
       .then(data => {
         if (Array.isArray(data) && data.length > 0) setEvents(data);
@@ -68,7 +68,7 @@ export default function AdminPanel() {
   const removeEvent = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      await fetch(`http://127.0.0.1:8000/api/events/${id}/`, {
+      await fetch(`https://smartbookapp.duckdns.org/api/events/${id}/`, {
         method: 'DELETE',
         headers: { Authorization: `Token ${token}` },
       });

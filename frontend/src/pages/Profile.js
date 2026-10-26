@@ -50,7 +50,7 @@ export default function Profile() {
   const fetchBookings = async () => {
     try {
       if (token) {
-        const res = await axios.get('http://127.0.0.1:8000/api/booking/my/', {
+        const res = await axios.get('https://smartbookapp.duckdns.org/api/booking/my/', {
           headers: { Authorization: `Token ${token}` },
         });
         setBookings(res.data.length > 0 ? res.data : DUMMY_BOOKINGS);

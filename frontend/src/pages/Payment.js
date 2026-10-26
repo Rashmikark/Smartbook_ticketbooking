@@ -129,7 +129,7 @@ export default function Payment() {
               discount: 50,
             };
             if (token) {
-              const res = await axios.post('http://127.0.0.1:8000/api/booking/create/', bookingData,
+              const res = await axios.post('https://smartbookapp.duckdns.org/api/booking/create/', bookingData,
                 { headers: { Authorization: `Token ${token}` } });
               localStorage.setItem('bookingId', res.data.booking_id);
               localStorage.setItem('finalAmount', res.data.final_amount);
